@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width">
+	<title>OTHELLO</title>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/othello.css">
+</head>
+<body>
+<div id="othelloGame"></div>
+<div id="startBox">
+	<button type="button" id="startBtn">START</button>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="js/othello.js"></script>
+<script type="text/javascript">
+	$(function() {
+		let othello = othelloClass();
+		let selector = '#othelloGame';
+		let val = 8;
+		othello.init(selector);
+		othello.initBoard(selector, val);
+		$('#startBtn').click(function() {
+			othello.start(selector, val);
+		});
+	});
+</script>
+</body>
+</html>
